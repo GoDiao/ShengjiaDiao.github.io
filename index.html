@@ -44,7 +44,7 @@
       transition: color 0.3s;
     }
 
-    nav a:hover {
+    nav a:hover, nav a.active {
       color: #667eea;
     }
 
@@ -278,13 +278,85 @@
       margin-bottom: 1rem;
     }
 
+    .timeline-item .department {
+      color: #666;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .project-section {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-section h4 {
+      color: #333;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
     .timeline-item ul {
       margin-left: 1.5rem;
       color: #666;
     }
 
     .timeline-item li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .timeline-item li strong {
+      color: #667eea;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #eee;
+    }
+
+    .tech-tag {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .metrics-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    .metric-item {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .metric-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #667eea;
+      display: block;
+    }
+
+    .metric-label {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.3rem;
     }
 
     /* Skills Section */
@@ -365,84 +437,6 @@
     .interest-card p {
       color: #666;
       font-size: 0.95rem;
-    }
-
-    /* Projects Section */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-    }
-
-    .project-img {
-      height: 200px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      color: white;
-    }
-
-    .project-info {
-      padding: 1.5rem;
-    }
-
-    .project-info h3 {
-      color: #333;
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
-    }
-
-    .project-info p {
-      color: #666;
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    .project-tags {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-    }
-
-    .tag {
-      background: #f0f0f0;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      color: #667eea;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .project-link {
-      color: #667eea;
-      text-decoration: none;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .project-link:hover {
-      text-decoration: underline;
     }
 
     /* Contact Section */
@@ -541,6 +535,10 @@
       section h2 {
         font-size: 2rem;
       }
+
+      .metrics-highlight {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -563,7 +561,7 @@
     <div class="hero-content">
       <h1>👋 Hi, I'm Shengjia Diao</h1>
       <p class="subtitle">Algorithm Research Engineer | Master's Student at NTU</p>
-      <p class="tagline">Specializing in Signal Processing, Machine Learning & Computer Vision</p>
+      <p class="tagline">Specializing in Computer Vision, Embodied AI & Low-Level Vision</p>
       <div class="hero-buttons">
         <a href="#research" class="btn btn-primary">Research Interests</a>
         <a href="#contact" class="btn">Get In Touch</a>
@@ -577,14 +575,14 @@
     <div class="about-content">
       <div class="profile-img">🎓</div>
       <div class="about-text">
-        <p>Hello! I'm Shengjia Diao, a Master's student at Nanyang Technological University (NTU) and an Algorithm Research Engineer Intern at Huawei Singapore Research Center.</p>
-        <p>My research focuses on the intersection of signal processing, machine learning, and computer vision. I'm passionate about developing innovative algorithms that solve real-world problems and push the boundaries of what's possible with AI.</p>
-        <p>With hands-on experience at leading tech companies like Huawei and Infineon Technologies, I bring both theoretical knowledge and practical expertise to my work. I'm particularly interested in applied AI, LLMOps, and advancing the field of Computer Vision.</p>
+        <p>Hello! I'm Shengjia Diao, a Master's student at Nanyang Technological University (NTU) and a Research Intern at Huawei 2012 Lab.</p>
+        <p>My research focuses on Computer Vision, particularly in low-level vision tasks (RGB-to-RAW reconstruction, low-light enhancement), Vision-Language-Action models for embodied AI, and object detection for autonomous driving applications.</p>
+        <p>With hands-on experience at leading tech companies like Huawei and Infineon Technologies, I bring both theoretical knowledge and practical expertise to cutting-edge AI research. I'm passionate about bridging the gap between computer vision and real-world robotic applications.</p>
         <div class="about-highlights">
-          <div class="highlight-item">✓ Signal Processing</div>
-          <div class="highlight-item">✓ Machine Learning</div>
           <div class="highlight-item">✓ Computer Vision</div>
-          <div class="highlight-item">✓ Algorithm Research</div>
+          <div class="highlight-item">✓ Embodied AI</div>
+          <div class="highlight-item">✓ Low-Level Vision</div>
+          <div class="highlight-item">✓ VLA Models</div>
         </div>
       </div>
     </div>
@@ -603,19 +601,74 @@
 
   <!-- Experience Section -->
   <section id="experience">
-    <h2>Experience</h2>
+    <h2>Professional Experience</h2>
     <div class="experience-timeline">
       <div class="timeline-item">
-        <h3>Algorithm Research Engineer Intern</h3>
-        <div class="company">Huawei Singapore Research Center</div>
+        <h3>Research Intern</h3>
+        <div class="company">Huawei 2012 Lab</div>
+        <div class="department">Video and Audio Algorithm Implementation Department</div>
         <div class="date">Current Position</div>
-        <ul>
-          <li>Conducting cutting-edge research in algorithm development and optimization</li>
-          <li>Working on signal processing and machine learning projects</li>
-          <li>Collaborating with international research teams on innovative solutions</li>
-          <li>Contributing to the development of next-generation technologies</li>
-        </ul>
+        
+        <div class="project-section">
+          <h4>🎯 RGB to RAW Reconstruction</h4>
+          <ul>
+            <li>Redesigned and implemented an <strong>inverse ISP pipeline</strong> based on the Unprocessing methodology (CVPR 2019), enabling high-fidelity RGB-to-RAW conversion for downstream vision tasks</li>
+            <li>Developed a <strong>lightweight RGB-to-RAW reconstruction model</strong> inspired by ReRAW (CVPR 2025), with redesigned architecture and loss functions tailored for daylight car-driving scenarios</li>
+            <li>Achieved significant performance improvements for autonomous driving applications</li>
+          </ul>
+          <div class="metrics-highlight">
+            <div class="metric-item">
+              <span class="metric-value">+7.9%</span>
+              <span class="metric-label">PSNR: 52.81→56.98</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-value">+4.4%</span>
+              <span class="metric-label">SSIM: 0.91→0.95</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-section">
+          <h4>🌙 Low-Light Image Enhancement</h4>
+          <ul>
+            <li>Researched state-of-the-art low-light enhancement techniques for robust vision under challenging illumination conditions</li>
+            <li>Designed a <strong>novel sampling workflow for VLM-IMI</strong> (Vision-Language Model for Image Enhancement) to boost data diversity and model robustness in real-world scenarios</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <h4>🤖 Vision-Language-Action (VLA) Models</h4>
+          <ul>
+            <li>Simulated and evaluated <strong>OpenVLA</strong> and <strong>SpatialVLA</strong> in robotic manipulation environments using SimplerEnv benchmark</li>
+            <li>Fine-tuned SpatialVLA on Bridge dataset, achieving <strong>43% relative improvement</strong> in task success rate (34.5%→49.5%)</li>
+            <li>Pioneered <strong>RAW image adaptation pipeline</strong> for RGB pre-trained VLA models by reconstructing RAW datasets, validating that RAW inputs significantly outperform conventional RGB processing in robotic vision tasks</li>
+          </ul>
+          <div class="metrics-highlight">
+            <div class="metric-item">
+              <span class="metric-value">+43%</span>
+              <span class="metric-label">Task Success Rate Improvement</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-value">34.5%→49.5%</span>
+              <span class="metric-label">Bridge Dataset Performance</span>
+            </div>
+          </div>
+        </div>
+
+        <p style="color: #667eea; font-style: italic; margin-top: 1.5rem;">More projects in progress...</p>
+
+        <div class="tech-tags">
+          <span class="tech-tag">PyTorch</span>
+          <span class="tech-tag">Computer Vision</span>
+          <span class="tech-tag">ISP Pipeline</span>
+          <span class="tech-tag">VLA Models</span>
+          <span class="tech-tag">Robotic Simulation</span>
+          <span class="tech-tag">Low-Light Enhancement</span>
+          <span class="tech-tag">RAW Processing</span>
+          <span class="tech-tag">Embodied AI</span>
+        </div>
       </div>
+
       <div class="timeline-item">
         <h3>Engineering Position</h3>
         <div class="company">Infineon Technologies</div>
@@ -640,8 +693,8 @@
           <span class="skill-tag">Neural Networks</span>
           <span class="skill-tag">TensorFlow</span>
           <span class="skill-tag">PyTorch</span>
-          <span class="skill-tag">Scikit-learn</span>
           <span class="skill-tag">Model Optimization</span>
+          <span class="skill-tag">Fine-tuning</span>
         </div>
       </div>
       <div class="skill-card">
@@ -650,19 +703,19 @@
           <span class="skill-tag">OpenCV</span>
           <span class="skill-tag">Image Processing</span>
           <span class="skill-tag">Object Detection</span>
-          <span class="skill-tag">Segmentation</span>
-          <span class="skill-tag">CNN</span>
-          <span class="skill-tag">Vision Transformers</span>
+          <span class="skill-tag">ISP Pipeline</span>
+          <span class="skill-tag">RAW Processing</span>
+          <span class="skill-tag">Low-Light Enhancement</span>
         </div>
       </div>
       <div class="skill-card">
-        <h3>📊 Signal Processing</h3>
+        <h3>🤖 Embodied AI</h3>
         <div class="skill-list">
-          <span class="skill-tag">Digital Signal Processing</span>
-          <span class="skill-tag">MATLAB</span>
-          <span class="skill-tag">Fourier Analysis</span>
-          <span class="skill-tag">Filter Design</span>
-          <span class="skill-tag">Time Series Analysis</span>
+          <span class="skill-tag">VLA Models</span>
+          <span class="skill-tag">Robotic Simulation</span>
+          <span class="skill-tag">SimplerEnv</span>
+          <span class="skill-tag">Vision-Language Models</span>
+          <span class="skill-tag">Manipulation Tasks</span>
         </div>
       </div>
       <div class="skill-card">
@@ -685,24 +738,34 @@
     <h2>Research Interests</h2>
     <div class="interests-grid">
       <div class="interest-card">
-        <div class="icon">🤖</div>
-        <h3>Applied AI</h3>
-        <p>Developing practical AI solutions for real-world applications and industry challenges</p>
-      </div>
-      <div class="interest-card">
-        <div class="icon">🔧</div>
-        <h3>LLMOps</h3>
-        <p>Exploring operations and deployment strategies for Large Language Models</p>
-      </div>
-      <div class="interest-card">
         <div class="icon">👁️</div>
         <h3>Computer Vision</h3>
-        <p>Advancing vision algorithms for object detection, recognition, and scene understanding</p>
+        <p>Image restoration, low-level vision, inverse ISP, and computational photography</p>
       </div>
       <div class="interest-card">
-        <div class="icon">📡</div>
-        <h3>Signal Processing</h3>
-        <p>Researching advanced signal processing techniques and their applications</p>
+        <div class="icon">🤖</div>
+        <h3>Vision-Language-Action Models</h3>
+        <p>Embodied AI, robotic manipulation, and multimodal learning for real-world tasks</p>
+      </div>
+      <div class="interest-card">
+        <div class="icon">🎯</div>
+        <h3>Object Detection</h3>
+        <p>Real-time detection systems and autonomous driving perception</p>
+      </div>
+      <div class="interest-card">
+        <div class="icon">🌙</div>
+        <h3>Low-Light Enhancement</h3>
+        <p>Robust vision under challenging illumination conditions</p>
+      </div>
+      <div class="interest-card">
+        <div class="icon">📸</div>
+        <h3>Computational Photography</h3>
+        <p>RAW image processing and ISP pipeline optimization</p>
+      </div>
+      <div class="interest-card">
+        <div class="icon">🚗</div>
+        <h3>Autonomous Driving</h3>
+        <p>Vision algorithms for self-driving car perception systems</p>
       </div>
     </div>
   </section>
@@ -711,7 +774,7 @@
   <section id="contact">
     <h2>Get In Touch</h2>
     <div class="contact-content">
-      <p>I'm always interested in discussing research opportunities, collaborations, or innovative projects in AI and Computer Vision. Feel free to reach out!</p>
+      <p>I'm always interested in discussing research opportunities, collaborations, or innovative projects in Computer Vision and Embodied AI. Feel free to reach out!</p>
       <div class="social-links">
         <a href="https://github.com/yourusername" title="GitHub">📦</a>
         <a href="https://www.linkedin.com/in/shengjia-diao-800964222/" title="LinkedIn">💼</a>
@@ -723,7 +786,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Shengjia Diao. Passionate about AI, ML, and Computer Vision Research</p>
+    <p>&copy; 2025 Shengjia Diao. Passionate about Computer Vision, Embodied AI & Low-Level Vision Research</p>
   </footer>
 
   <script>
